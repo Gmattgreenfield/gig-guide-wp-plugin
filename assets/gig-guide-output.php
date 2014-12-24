@@ -24,14 +24,17 @@
 
 		$town = get_post_meta(get_the_ID(), 'gig_town', true );
 		$date = get_post_meta(get_the_ID(), 'gig_date', true );
+		$formattedDate = date("d/m/Y", strtotime($date));
+
 		$time = get_post_meta(get_the_ID(), 'gig_time', true );
+
 
 ?>
 
 		<tr>
 			<td><?php the_title() ?></td>
 			<td><?= $town ?></td>
-			<td><?= $date ?></td>
+			<td><?= $formattedDate ?></td>
 			<td><?= $time ?></td>
 		</tr>
 
